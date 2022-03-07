@@ -29,12 +29,12 @@ async function getNFTavalider() {
     //    </tbody>
     // </table>
     // `
-    const target = document.querySelector('#tableofnftavalider');
+//     const target = document.querySelector('#card');
 
-// insert the element before target element
-    const h2 = document.createElement("h2")
-    h2.innerText+=`Vos NFT à valider:`
-    target.parentNode.insertBefore(h2, target);
+// // insert the element before target element
+//     const h2 = document.createElement("h2")
+//     h2.innerText+=`Vos NFT à valider:`
+//     target.parentNode.insertBefore(h2, target);
     document.getElementById("card").innerHTML="";
 
 
@@ -64,11 +64,16 @@ async function getNFTavalider() {
 
 
     //  </tr>
-    let list = [result[index].get("nom"), result[index].get("initialisateur"), result[index].get("description") , image._url];
-         let content =  `
+    //let list = [result[index].get("nom"), result[index].get("initialisateur"), result[index].get("description") , image._url];
+      
+    
+
+    //style="max-width:100%; max-height: 100%;
+      let content =  `
+
 
          <li>
-         <a class="card" style="max-width:250%; max-height: 100%;">
+         <a class="card" ">
 
            <img src="${image._url}" class="card__image" alt="" />
            <div class="card__overlay">

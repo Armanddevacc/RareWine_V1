@@ -29,3 +29,14 @@ function onClick(element) {
       window.location.href = "login.html";
     }
   }
+
+  async function getRoleMyUser() {
+    let user = Moralis.User.current();
+    
+    const UserDetails = Moralis.Object.extend("UserDetails");
+    const query = new Moralis.Query(UserDetails);
+    query.equalTo("ethAddress", user.get("ethAddress"));
+    const results = await query.first();
+  
+    return results.get("role")
+  }

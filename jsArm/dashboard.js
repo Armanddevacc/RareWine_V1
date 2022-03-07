@@ -1,3 +1,6 @@
+
+
+
 async function SetThingsUpAndRunning() {
   
   let user = Moralis.User.current();
@@ -6,7 +9,7 @@ async function SetThingsUpAndRunning() {
   const query = new Moralis.Query(UserDetails);
   query.equalTo("ethAddress", user.get("ethAddress"));
   const results = await query.first();
-  document.getElementById("sidebarMenu").innerHTML = null;
+  document.getElementById("sidebarMenu").innerHTML = "";
   
   switch (results.get("role")) {
     case "initialisateur":
@@ -40,15 +43,12 @@ async function SetThingsUpAndRunning() {
       document.getElementById("sidebarMenu").innerHTML = slidedefault1;
       
       const tableofdefault1 =`          
-      <h2></h2>
       <div id="tableofusers" class="table-responsive">
       
       </div>
-      <h2></h2>
       <div id="tableofnouveauxnfts" class="table-responsive">
 
       </div>
-      <h2></h2>
       <div id="tableoflistnfts" class="table-responsive">
       
       </div>`
@@ -67,8 +67,7 @@ async function SetThingsUpAndRunning() {
         document.getElementById("slidelist").innerHTML += slidedefault2;
         
         const tableofdefault2 =`          
-        <h2></h2>
-        <div id="tableofnftavalider" class="table-responsive">
+        <div id="tableofnftavalider" class="table-responsive ">
           <ul class="cards", id="card">
           </ul>
 

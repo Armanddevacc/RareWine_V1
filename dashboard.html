@@ -20,66 +20,64 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+    <link rel="stylesheet" href="/style/petite_resolution.css" />
 
     
   </head>
+  <script>
+    async function check() {   
+      const role = await getRoleMyUser()
+      if (role=="initialisateur"  && document.querySelector("#mySidebar").children.length <= 5) {
+        const roleNFT=`<a onclick="w3_close(),getNFTavalider()" class="w3-bar-item">Vos NFT à valider</a>`;
+        document.querySelector("#mySidebar").innerHTML+=roleNFT;
+      } 
+    }
+      
+  </script>
   <body>
     
 
 
   
     <!-- Navbar (sit on top) -->
-    
-    <div>
-      <div class="w3-bar w3-black w3-card" id="myNavbar" style="grid-area: header;">
-        <a href="/" class="w3-bar-item w3-button w3-wide">WineRare.eth</a>
-        <!-- Right-sided navbar links -->
-        <div class="w3-right w3-hide-small">
-          <!-- <a href="#about" class="w3-bar-item w3-button">ABOUT</a> -->
-          
-          <a class="w3-bar-item w3-button" onclick="logOut()"></i>Se Déconnecté</a>
-        </div>
-        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-    </div>
-
-    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-      <a href="" onclick="w3_close()" class="w3-bar-item w3-button">Informations Personnel</a>
-      <a href="" onclick="w3_close()" class="w3-bar-item w3-button">Vos NFT</a>
-      <a onclick="w3_close();" class="w3-bar-item w3-button">Devenir Partenaire</a>
-      <a class="w3-bar-item w3-button" onclick="logOut();w3_close();"></i>Se Déconnecté</a>
-      <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fermer ×</a>
-    </nav>
-    
+    <header>
+      <div>
+        <div class="w3-bar w3-black w3-card" id="myNavbar">
+          <a href="/index.html" class="w3-bar-item w3-button w3-wide">WineRare.eth</a>
+          <a href="/index.html" class="w3-button disparaitreplus" style="margin-left: 23px;"><i class="fa fa-th"></i></a>
   
-
-
-
-<div>
-  <div>
-    
-    <nav id="sidebarMenu" class="sidebar " style="grid-area: sidebar;">
-
-    </nav>
-
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" >
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-
-
+          <!-- Right-sided navbar links -->
+          <div class="w3-right w3-hide-small">
+            <!-- <a href="#about" class="w3-bar-item w3-button">ABOUT</a> -->
+            
+            <a class="w3-button disparaitreplus" onclick="logOut()"></i>Se Déconnecté</a>
+          </div>
+          <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+  
+          <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right hide-big" onclick="check(),w3_open()">
+            <i class="fa fa-bars"></i>
+          </a>
         </div>
-        <div id="tableof">
+      </div>
+      <div>
+        <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left" id="mySidebar" style="display: none;">
+          <a href="" onclick="w3_close()" class="w3-bar-item w3-button">Informations Personnel</a>
+          <a href="" onclick="w3_close()" class="w3-bar-item w3-button">Vos NFT</a>
+          <a onclick="w3_close();" class="w3-bar-item w3-button">Devenir Partenaire</a>
+          <a class="w3-bar-item w3-button" onclick="logOut();w3_close();"></i>Se Déconnecté</a>
+          <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fermer ×</a>
+        </nav>
+      </div>
+    </header>
 
 
-        </div>
-      </main>
-  </div>
-</div>
+    <main class="col-md-9 ms-sm-auto px-md-4 wrapper">
+      <nav id="sidebarMenu" class="sidebar disparaitreplus" style="grid-area: sidebar;"></nav>
+      <h1 class="h2" onclick="window.location.href = '/dashboard.html'" style="margin-top: 25px;">Dashboard</h1>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom" ></div>  
+      <div style="grid-area: content;" id="tableof"></div>
+    </main>
+
 
 
       <script src="/js/bootstrap.bundle.min.js"></script>
@@ -89,6 +87,8 @@
       <script src="jsArm/dashboard.js"></script>
       <script src="jsArm/admin.js"></script>
       <script src="jsArm/sidebar.js"></script>
+
+
 
   </body>
 </html>
