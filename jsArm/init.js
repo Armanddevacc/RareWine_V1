@@ -29,8 +29,15 @@ async function getNFTavalider() {
     //    </tbody>
     // </table>
     // `
- 
-    document.querySelector("#card").innerHTML="";
+    const target = document.querySelector('#tableofnftavalider');
+
+// insert the element before target element
+    const h2 = document.createElement("h2")
+    h2.innerText+=`Vos NFT à valider:`
+    target.parentNode.insertBefore(h2, target);
+    document.getElementById("card").innerHTML="";
+
+
  
      let user = Moralis.User.current();
  
@@ -88,6 +95,7 @@ async function getNFTavalider() {
        }
         
      }
+
  
  
  

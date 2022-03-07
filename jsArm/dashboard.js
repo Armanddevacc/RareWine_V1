@@ -40,15 +40,15 @@ async function SetThingsUpAndRunning() {
       document.getElementById("sidebarMenu").innerHTML = slidedefault1;
       
       const tableofdefault1 =`          
-      <h2>Informations Personnel</h2>
+      <h2></h2>
       <div id="tableofusers" class="table-responsive">
       
       </div>
-      <h2>Vos NFT</h2>
+      <h2></h2>
       <div id="tableofnouveauxnfts" class="table-responsive">
 
       </div>
-      <h2>Devenir Partenaire</h2>
+      <h2></h2>
       <div id="tableoflistnfts" class="table-responsive">
       
       </div>`
@@ -67,7 +67,7 @@ async function SetThingsUpAndRunning() {
         document.getElementById("slidelist").innerHTML += slidedefault2;
         
         const tableofdefault2 =`          
-        <h2>vos NFT à valider !</h2>
+        <h2></h2>
         <div id="tableofnftavalider" class="table-responsive">
           <ul class="cards", id="card">
           </ul>

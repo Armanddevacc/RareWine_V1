@@ -16,34 +16,58 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
 
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 
     
-    <!-- Custom styles for this template -->
   </head>
   <body>
     
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">Wine Nfts</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#" id="btn-logout">Sign out</a>
-    </div>
-  </div>
-</header>
 
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+
+  
+    <!-- Navbar (sit on top) -->
+    
+    <div>
+      <div class="w3-bar w3-black w3-card" id="myNavbar" style="grid-area: header;">
+        <a href="/" class="w3-bar-item w3-button w3-wide">WineRare.eth</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+          <!-- <a href="#about" class="w3-bar-item w3-button">ABOUT</a> -->
+          
+          <a class="w3-bar-item w3-button" onclick="logOut()"></i>Se Déconnecté</a>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+      <a href="" onclick="w3_close()" class="w3-bar-item w3-button">Informations Personnel</a>
+      <a href="" onclick="w3_close()" class="w3-bar-item w3-button">Vos NFT</a>
+      <a onclick="w3_close();" class="w3-bar-item w3-button">Devenir Partenaire</a>
+      <a class="w3-bar-item w3-button" onclick="logOut();w3_close();"></i>Se Déconnecté</a>
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fermer ×</a>
+    </nav>
+    
+  
+
+
+
+<div>
+  <div>
+    
+    <nav id="sidebarMenu" class="sidebar " style="grid-area: sidebar;">
 
     </nav>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" >
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
 
@@ -64,6 +88,7 @@
       <script src="jsArm/init.js"></script>
       <script src="jsArm/dashboard.js"></script>
       <script src="jsArm/admin.js"></script>
+      <script src="jsArm/sidebar.js"></script>
 
   </body>
 </html>

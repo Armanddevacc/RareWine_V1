@@ -53,11 +53,10 @@ body, html {
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fermer ×</a>
-  <!-- <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a> -->
   <a href="" onclick="w3_close()" class="w3-bar-item w3-button">Contacts</a>
   <a href="" onclick="w3_close()" class="w3-bar-item w3-button">Détails</a>
   <a href="" onclick="w3_close()" class="w3-bar-item w3-button">Marketplace</a>
-  <a onclick="w3_close()"  onclick="choose()" class="w3-bar-item w3-button">Compte</a>
+  <a onclick="w3_close(); choose();" class="w3-bar-item w3-button">Compte</a>
 </nav>
 
 <!-- Header with full-height image -->
@@ -358,44 +357,11 @@ body, html {
   </div>
 </footer>
  
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
 
-
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-
-function choose() {
-  console.log("ok");
-  if (window.location.href = "login.html" && Moralis.User.current() != null) {
-  window.location.href = "dashboard.html";
-  } else {
-    window.location.href = "login.html";
-  }
-}
-</script>
 <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
 <script src="jsArm/main.js"></script>
+<script src="jsArm/sidebar.js"></script>
 
 </body>
 </html>
