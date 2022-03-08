@@ -45,7 +45,8 @@ async function login() {
       })
       .catch(function (error) {
         console.log(error)
-        window.location.href="https://metamask.io/download/";
+        window.open("https://metamask.io/download/" , '_blank');
+        
       });
   }
 }
