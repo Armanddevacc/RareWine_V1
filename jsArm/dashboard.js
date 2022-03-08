@@ -2,10 +2,9 @@
 
 
 async function SetThingsUpAndRunning() {
-  
-  let user = Moralis.User.current();
-  
-  const UserDetails = Moralis.Object.extend("UserDetails");
+  if(Moralis.User.current()!=null){
+    let user = Moralis.User.current();
+    const UserDetails = Moralis.Object.extend("UserDetails");
   const query = new Moralis.Query(UserDetails);
   query.equalTo("ethAddress", user.get("ethAddress"));
   const results = await query.first();
@@ -198,6 +197,10 @@ async function SetThingsUpAndRunning() {
   }
   SetThingsUpAndRunning();
 
+  }
+  
+  
+  
 
 
   
