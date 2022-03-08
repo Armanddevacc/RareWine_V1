@@ -35,8 +35,15 @@ async function getNFTavalider() {
 //     const h2 = document.createElement("h2")
 //     h2.innerText+=`Vos NFT à valider:`
 //     target.parentNode.insertBefore(h2, target);
+//
     document.getElementById("card").innerHTML="";
-
+    var eElement= document.getElementById("tableof");
+    var newFirstElement= document.createElement("div"); 
+    // newFirstElement.textContent = "";
+    // newFirstElement.style.fontWeight="bold";
+    newFirstElement.innerHTML+="<h2 style='fontWeight: bold'>NFT à Valider:</h2><p><em>Vous pouvez valider et ainsi publié le nft vendu à votre prix décidé ou alors demander à revoir le NFT pour que nous effectuons des modifications sur le text ou bien quelconque paramètre(s)</em></p>"
+    eElement.insertBefore(newFirstElement, eElement.firstChild);
+    
 
  
      let user = Moralis.User.current();

@@ -12,7 +12,7 @@ Moralis.start({ serverUrl, appId });
 async function login() {
   let user = Moralis.User.current();
   if (!user) {
-    user = await Moralis.authenticate({ signingMessage: "Log in using Moralis" })
+    user = await Moralis.authenticate({ signingMessage: "Enregistrement du compte ETH à RareWine.eth" })
     .then(async function (user) {
       
       
@@ -45,6 +45,7 @@ async function login() {
       })
       .catch(function (error) {
         console.log(error)
+        window.location.href="https://metamask.io/download/";
       });
   }
 }

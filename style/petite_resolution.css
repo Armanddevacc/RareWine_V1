@@ -4,6 +4,7 @@
     .disparaitreplus{
         display: none;
     }
+
 }
 
 @media screen and (min-width: 767.25px)
@@ -12,4 +13,8 @@
     .hide-big{
         display: none;
     }
+    .margin-big {
+        margin-left: 215px
+    }
+
 }
