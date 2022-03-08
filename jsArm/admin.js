@@ -236,16 +236,16 @@ async function saveNftModel() {
         for (let index = 0; index < myInput.length; index++) {
             const t1=myInput[index].value  
             const t2=myInput[index].value
-            myInput2+=t1;
-            myInputData2=+t2;     
+            // myInput2[index]=t1;
+            // myInputData2[index]=t2;     
             const obj = { 
                 "trait_type":t1, 
                 "value":t2
             }
-            tot+= obj;
+            tot.push(obj);
         }
 
-        console.log(obj);
+        console.log(tot);
 
 
         const NftModels = Moralis.Object.extend("Product");

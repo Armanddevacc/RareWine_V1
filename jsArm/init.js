@@ -95,6 +95,8 @@ async function getNFTavalider() {
              </div>
              
             <p class="card__description">${result[index].get("description")}</p>
+            <p class="card__description">${JSON.stringify(result[index].get("attribute"))}</p>
+
             <div class="center">
               <button class="button", onclick="revoir(this)">à revoir</button>
               <button class="button", onclick="upload(this)">valider</button>
@@ -120,9 +122,10 @@ async function upload(button){
 
     const tr = button.parentElement;
     const imagetest = tr.parentElement.previousElementSibling;
-    const description = tr.previousElementSibling.innerText;
+    const description = tr.previousElementSibling.previousElementSibling.innerText;
+    const attributes = tr.previousElementSibling.innerText;
 
-    const div = tr.previousElementSibling.previousElementSibling;
+    const div = tr.previousElementSibling.previousElementSibling.previousElementSibling;
     const div2 = div.children[0];
     const nom = div2.children[0].innerText;
     const initialisateur = div.children[0].children[1].innerText;
@@ -148,7 +151,7 @@ async function upload(button){
       const imageURI = imageFile.ipfs();
 
 
-      const attributes=[{"trait_type": "vintage", "value": "2018"}]
+      //const attributes=[{"trait_type": "vintage", "value": "2018"}]
         
       
       const metadata = {
